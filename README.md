@@ -1,2 +1,2 @@
-# MWC-Public
- Public Repo for Militarized Wallet Cracker.
+# MWC
+ The only truly militarized Wallet Cracker.

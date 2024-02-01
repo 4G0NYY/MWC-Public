@@ -1,0 +1,6 @@
+/dist
+/build
+btc.txt
+main.spec
+progress.txt
+*.txt
