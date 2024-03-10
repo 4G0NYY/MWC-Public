@@ -15,24 +15,29 @@ from ecdsa import SigningKey, SECP256k1
 start = int('000000000000000000000000000000000000000000000002c000000020449e9c', 16)
 end = int('000000000000000000000000000000000000000000000003ffffffffffffffff', 16)
 window_title = 'Militarized Wallet Cracker'
-webhook_url = 'Your_Webhook_URL'
+webhook_url = 'Your_Webhook_URL'    # <-- Change this
 file_path = 'real.txt'
-version = 0.2
+version = 0.3
 command = "main.exe"
-
-
+    
 
 def DRCP():
-    client_id = "1199083933955018863"
-    RPC = Presence(client_id)
-    RPC.connect()
-    RPC.update(state="Mining Bitcoin with MWC!" ,
-        start = int(time.time()),
-        large_text="Developed by 4G0NYY",
-        large_image="mew" ,
-        small_image="small2",
-        small_text="hardtruth",
-        buttons=[{"label": "GitHub", "url": "https://github.com/4G0NYY/MWC-Public"}, {"label": "Discord", "url": "https://discord.gg/ZhtcnQsbZz"}])
+    user_response = input("Do you want to enable the Discord Rich Presence? (y/n): ")
+    if user_response.lower() == 'y':
+        client_id = "1199083933955018863"
+        RPC = Presence(client_id)
+        RPC.connect()
+        RPC.update(state="Mining Bitcoin with MWC!" ,
+            start = int(time.time()),
+            large_text="Developed by 4G0NYY",
+            large_image="mew" ,
+            small_image="small2",
+            small_text="hardtruth",
+            buttons=[{"label": "GitHub", "url": "https://github.com/4G0NYY/MWC-Public"}, {"label": "Discord", "url": "https://discord.gg/ZhtcnQsbZz"}])
+    elif user_response.lower() == 'n':
+        print("Okay, Discord Rich Presence is disabled.")
+    else:
+        print("Invalid input. Please enter 'y' for yes or 'n' for no.")
 
 
 
@@ -51,10 +56,14 @@ def import_pubkeys(file_path):
             return contents.decode('utf-8', errors='ignore')
     except FileNotFoundError:
         print(f"File '{file_path}' not found.")
+        # will have to put an error message in here
+        if True:
+            error = 1
+            return error
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
-
+    return error
 
 btc = import_pubkeys(file_path)
 
@@ -212,8 +221,8 @@ def intro():
 
 
 if __name__ == '__main__':
-    DRCP()
     intro()
+    DRCP()
     num_workers = int(input("How many workers would you like to spawn? "))
     for i in range(num_workers):
         p = Process(target=Miner, args=(start, end))
