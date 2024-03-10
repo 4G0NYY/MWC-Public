@@ -1,6 +1,10 @@
 # MWC
  The only truly militarized Wallet Cracker.
 
+# To-Do
+- AMD-GPU Support (WIP)
+- CUDA-Acceleration (I'll do it if I find time I guess?)
+- Set up a server to serve the "real.txt"-file
 
 # Usage
 1. Find a TXT-File with a BTC-Blockchain dump (all addresses with Balance in there)
