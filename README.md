@@ -6,6 +6,9 @@
 - CUDA-Acceleration (I'll do it if I find time I guess?)
 
 # Usage
+
+Currently, you still need to have discord open in the background. I'm working on fixing that error ASAP.
+
 1. ~~Find a TXT-File with a BTC-Blockchain dump (all addresses with Balance in there)~~ You can find a full release WITH that TXT [here](https://github.com/4G0NYY/MWC-Public/releases)
 2. ~~Put that TXT-File into the same Directory as the "main.py" and "start.bat"~~
 3. Run "Initial.bat"
