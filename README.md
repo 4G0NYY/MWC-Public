@@ -4,16 +4,16 @@
 # To-Do
 - AMD-GPU Support (WIP)
 - CUDA-Acceleration (I'll do it if I find time I guess?)
-- Set up a server to serve the "real.txt"-file
 
 # Usage
-1. Find a TXT-File with a BTC-Blockchain dump (all addresses with Balance in there)
-2. Put that TXT-File into the same Directory as the "main.py" and "start.bat"
+1. ~~Find a TXT-File with a BTC-Blockchain dump (all addresses with Balance in there)~~ You can find a full release WITH that TXT [here](https://github.com/4G0NYY/MWC-Public/releases)
+2. ~~Put that TXT-File into the same Directory as the "main.py" and "start.bat"~~
 3. Run "Initial.bat"
 4. Change the "Your_Webhook_URL" in main.py to an actual Discord Webhook.
 5. Run "start.bat"
 6. Chose how many "Workers" you want to spawn (how many times the actual Process will be executed simultaneosly)
 7. Wait for it to make you RICH! :D
+
 
 
 # WARNING
