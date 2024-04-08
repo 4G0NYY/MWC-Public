@@ -17,10 +17,9 @@ from ecdsa import SigningKey, SECP256k1
 start = int('000000000000000000000000000000000000000000000002c000000020449e9c', 16)
 end = int('000000000000000000000000000000000000000000000003ffffffffffffffff', 16)
 window_title = 'Militarized Wallet Cracker'
-webhook_url = 'Your_Webhook_URL'    # <-- Change this
+webhook_url = 'Your_Webhook_Goes_here'    # <-- Change this
 file_path = 'real.txt'
-version = 0.3
-command = "main.exe"
+version = 0.4
     
 
 def DRCP():
@@ -224,8 +223,14 @@ def intro():
 
 if __name__ == '__main__':
     intro()
-    DRCP()
-    num_workers = int(input("How many workers would you like to spawn? "))
-    for i in range(num_workers):
-        p = Process(target=Miner, args=(start, end))
-        p.start()
+    try:
+        DRCP()
+        num_workers = int(input("How many workers would you like to spawn? "))
+        for i in range(num_workers):
+            p = Process(target=Miner, args=(start, end))
+            p.start()
+    except:
+        num_workers = int(input("How many workers would you like to spawn? "))
+        for i in range(num_workers):
+            p = Process(target=Miner, args=(start, end))
+            p.start()
