@@ -17,10 +17,14 @@ from ecdsa import SigningKey, SECP256k1
 start = int('000000000000000000000000000000000000000000000002c000000020449e9c', 16)
 end = int('000000000000000000000000000000000000000000000003ffffffffffffffff', 16)
 window_title = 'Militarized Wallet Cracker'
-webhook_url = 'Your_Webhook_Goes_here'    # <-- Change this
+#webhook_url = input("Your Discord Webhook URL:")    # Not necessary anymore.
 file_path = 'real.txt'
 version = 0.4
     
+
+def askwebhook():
+    webhook_url = input("Your Discord Webhook URL:")
+    return webhook_url
 
 def DRCP():
     user_response = input("Do you want to enable the Discord Rich Presence? (y/n): ")
@@ -57,7 +61,7 @@ def import_pubkeys(file_path):
             return contents.decode('utf-8', errors='ignore')
     except FileNotFoundError:
         print(f"File '{file_path}' not found.")
-        # will have to put an error message in here
+        # will have to put an error message in here //TODO
         if True:
             error = 1
             return error
@@ -223,6 +227,8 @@ def intro():
 
 if __name__ == '__main__':
     intro()
+#    askwebhook()
+    webhook_url = input("Your Discord Webhook URL:")
     try:
         DRCP()
         num_workers = int(input("How many workers would you like to spawn? "))
