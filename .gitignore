@@ -1,6 +1,6 @@
 /dist
 /build
 btc.txt
-main.spec
+*.spec
 progress.txt
 *.txt
