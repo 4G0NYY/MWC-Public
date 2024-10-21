@@ -1,4 +1,16 @@
-ADDRESS=
-BAD_HIT_LOG=
-DISCORD_WEBHOOK=
-WORKERS=
+#### MILITARIZED WALLET CRACKER CONFIG #### 
+
+
+## Override variables with config file [True/False]*
+USE_CONFIG: False
+
+
+## How many workers will be spawned [int(any)]*
+WORKERS: 1
+
+
+## Enable bad hit logging to console [True/False]*
+BAD_HIT_LOG: False
+
+## Your discord webhook URL, if empty, it will be disabled [str(any)]
+DISCORD_WEBHOOK: ""
