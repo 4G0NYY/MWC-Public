@@ -40,7 +40,6 @@ class DiscordRPC(threading.Thread):
     def stop(self):
         self._stop_event.set()
 
-
 # The Miner Process which does not utilize the GPU
 class Miner(threading.Thread):
     def Miner(start, end):
