@@ -12,10 +12,11 @@ import siphash24
 from pypresence import Presence
 from ecdsa import SigningKey, SECP256k1
 
-
+# General Variables
 window_title = 'Militarized Wallet Cracker'
 file_path = 'real.txt'
 version = "1.5 PRE"
+
 
 # The Discord Process 
 class DiscordRPC(threading.Thread):
@@ -115,20 +116,17 @@ def importconfigyes():
         useconfig = data['USE_CONFIG']
         return useconfig
 
-
 def importconfiggpu():
     with open('config.yaml') as f:
         data = yaml.load(f,Loader=yaml.FullLoader)
         gpufast = data['GPU_ACCELERATION']
         return gpufast
 
-
 def importconfigwebhook():
     with open('config.yaml') as f:
         data = yaml.load(f,Loader=yaml.FullLoader)
         webhook = data['DISCORD_WEBHOOK']
         return webhook
-
 
 def importconfigworkers():
     with open('config.yaml') as f:
@@ -166,7 +164,6 @@ class MinerGPU():
             count = 1
             interval = 3600
             next_report_time = time.time() + interval
-
             if os.path.exists('progress.txt'):
                 with open('progress.txt', 'r') as file:
                     last_checked_key = int(file.read().strip(), 16)
@@ -174,7 +171,6 @@ class MinerGPU():
             else:
                 last_checked_key = start
                 print('Starting from the beginning.')
-
             for i in range(start, end + 1):
                 puzzleaddr = btc
                 private_key_hex = binascii.hexlify(os.urandom(32)).decode('utf-8')
@@ -235,9 +231,8 @@ def intro():
     print(version)
     print(b)
 
-
+# What's actually executed whenever this file is being run.
 if __name__ == '__main__':
-
     intro()
     useconfig = importconfigyes()
     if useconfig == 'True':     # If the Config File should be used
